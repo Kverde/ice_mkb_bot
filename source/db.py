@@ -10,7 +10,7 @@ class Db():
         connect = psycopg2.connect(self.setting.database_url)
         cursor = connect.cursor()
 
-        sqlCode = '%{}%'.format(code.upper())
+        sqlCode = '%{}%'.format(code.replace("'", "").upper())
 
         cursor.execute("select mkb_code, mkb_name from mkb_bot.mkb_10 mkb where mkb.mkb_code like '{}'".format(sqlCode))
 
