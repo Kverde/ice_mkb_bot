@@ -6,14 +6,14 @@ root = tree.getroot()
 i = 0
 element_count = len(root)
 
-cSql = "insert into ice_mkb.mkb_10(id, id_parent, mkb_code, mkb_name, rec_code, addl_code) values({}, {}, {}, {}, {}, {});\n"
+cSql = "insert into mkb_bot.mkb_10(id, id_parent, mkb_code, mkb_name, rec_code, addl_code) values({}, {}, {}, {}, {}, {});\n"
 
 def toSqlValue(s):
     s = s.strip()
     if s == '':
         return 'null'
     else:
-        return "'{}'".format(s)
+        return "'{}'".format(s.replace("'", "''"))
 
 def toSqlIntVelue(s):
     s = s.strip()
@@ -23,6 +23,8 @@ def toSqlIntVelue(s):
         return s
 
 f = open('out.sql', 'w')
+
+f.write('delete from mkb_bot.mkb_10;\n\n')
 
 while i < element_count:
     mkb_code = toSqlValue(root[i].text)

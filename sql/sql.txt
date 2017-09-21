@@ -1,0 +1,18 @@
+-- SCHEMA: mkb_bot
+
+DROP SCHEMA mkb_bot;
+CREATE SCHEMA mkb_bot;
+	
+DROP TABLE mkb_bot.mkb_10;
+CREATE TABLE mkb_bot.mkb_10
+(
+    id integer NOT NULL,
+    id_parent integer,
+    mkb_code character varying(50),
+    mkb_name character varying(300),
+    rec_code character varying(30),
+    addl_code character varying(30),
+    CONSTRAINT "PK_MKB_10_ID" PRIMARY KEY (ID)
+);
+	
+	
