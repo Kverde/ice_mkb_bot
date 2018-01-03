@@ -1,4 +1,4 @@
 python-telegram-bot==9.0
 psycopg2==2.7.3.2
-base_settings=0.0.4
-easy-botan=0.0.4
+base_settings==0.0.4
+easy-botan==0.0.4
