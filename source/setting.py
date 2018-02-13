@@ -7,7 +7,7 @@ class Setting(BaseSettings):
 
         self.telegram_token = self.load_setting('TELEGRAM_TOKEN')
         self.botan_token = self.load_setting('BOTAN_TOKEN')
-        self.database_url = self.load_setting('DATABASE_URL', None)
+        self.database_url = self.load_setting('DATABASE_URL', ' ')
 
 
 
